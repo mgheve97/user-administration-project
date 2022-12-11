@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import fxmltableview.*?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+			xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+			fx:controller="com.example.mysqljava.controller.AppController">
+	<padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+	
+	<Label style="-fx-font: NORMAL 20 Tahoma" text="Add User to Database"
+			GridPane.columnIndex="0" GridPane.rowIndex="0"
+			GridPane.columnSpan="2"/>
+	<Label text="First Name: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+	<TextField fx:id="firstNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+	
+	<Label text="Last Name: " GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+	<TextField fx:id="lastNameField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+	
+	<Label text="Username: " GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+	<TextField fx:id="usernameField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+	
+	<Label text="Password: " GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+	<TextField fx:id="passwordField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+	
+	
+	<HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="5">
+		<Button text="add User" onAction="#addUser"/>
+	</HBox>
+	
+	<Label style="-fx-font: NORMAL 20 Tahoma" text="Registered Users"
+			GridPane.columnIndex="1" GridPane.rowIndex="6"
+			GridPane.columnSpan="2"/>
+			
+	<TableView fx:id="tableView" GridPane.columnIndex="1" GridPane.rowIndex="7">
+		<columns>
+			<TableColumn text="First Name">
+				<cellValueFactory><PropertyValueFactory property="first_name" /></cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Last Name">
+				<cellValueFactory><PropertyValueFactory property="last_name" /></cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Username">
+				<cellValueFactory><PropertyValueFactory property="username" /></cellValueFactory>
+			</TableColumn>
+			<TableColumn text="Password">
+				<cellValueFactory><PropertyValueFactory property="userpass" /></cellValueFactory>
+			</TableColumn>
+		</columns>
+		<items>
+			<FXCollections fx:factory="observableArrayList"/>
+		</items>
+	</TableView>
+	
+	<HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="8">
+		<Button text="Fetch User" onAction="#getUsers"/>
+	</HBox>
+	
+    <stylesheets>
+        <URL value="@stylesheet.css"/>
+    </stylesheets>
+	
+</GridPane>

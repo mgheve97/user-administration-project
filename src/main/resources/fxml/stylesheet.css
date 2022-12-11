@@ -1,0 +1,28 @@
+.root {
+    -fx-background-image: url("image/simplebackground.jpg");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover, auto;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+#tableView {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+.button {
+    -fx-background-color: #1dd1a1;
+    -fx-border: none;
+    -fx-text-fill: white;
+    -fx-padding: 15px 32px;
+    -fx-text-align: center;
+    -fx-text-decoration: none;
+    -fx-display: inline-block;
+    -fx-font-size: 16px;
+}
